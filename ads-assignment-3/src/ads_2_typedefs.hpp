@@ -9,11 +9,19 @@
 #ifndef ads_2_typedefs_h
 #define ads_2_typedefs_h
 
+#include <map>
+#include <vector>
+
 namespace ads_2
 {
-    namespace type {
+    namespace type
+    {
         typedef uint_fast32_t uintf;
         typedef std::map<std::string, uintf> Data;
+        typedef std::pair<std::string, uintf> DataPair;
+        typedef std::vector<DataPair> Pairs;
+        typedef std::vector<uintf> Dimension;
+        typedef std::vector<Dimension> Matrix;
     }
 }
 
