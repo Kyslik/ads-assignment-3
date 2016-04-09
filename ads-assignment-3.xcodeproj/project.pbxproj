@@ -11,6 +11,7 @@
 		502A587F1CB82DB2009D8931 /* dictionary-min.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A587D1CB82DAA009D8931 /* dictionary-min.txt */; };
 		502A58881CB9231E009D8931 /* FileParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502A58861CB9231E009D8931 /* FileParser.cpp */; };
 		502A588B1CB93382009D8931 /* dictionary-small.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A588A1CB93366009D8931 /* dictionary-small.txt */; };
+		502A588E1CB93CA9009D8931 /* binary_search_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502A588C1CB93CA9009D8931 /* binary_search_tree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,9 @@
 		502A58871CB9231E009D8931 /* FileParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileParser.hpp; sourceTree = "<group>"; };
 		502A58891CB92DBF009D8931 /* ads_2_typedefs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ads_2_typedefs.hpp; sourceTree = "<group>"; };
 		502A588A1CB93366009D8931 /* dictionary-small.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-small.txt"; sourceTree = "<group>"; };
+		502A588C1CB93CA9009D8931 /* binary_search_tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = binary_search_tree.cpp; sourceTree = "<group>"; };
+		502A588D1CB93CA9009D8931 /* binary_search_tree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = binary_search_tree.hpp; sourceTree = "<group>"; };
+		502A588F1CB93CC6009D8931 /* node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,9 @@
 		502A58841CB830F9009D8931 /* optimal_binary_tree */ = {
 			isa = PBXGroup;
 			children = (
+				502A588C1CB93CA9009D8931 /* binary_search_tree.cpp */,
+				502A588D1CB93CA9009D8931 /* binary_search_tree.hpp */,
+				502A588F1CB93CC6009D8931 /* node.hpp */,
 			);
 			path = optimal_binary_tree;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				502A58881CB9231E009D8931 /* FileParser.cpp in Sources */,
+				502A588E1CB93CA9009D8931 /* binary_search_tree.cpp in Sources */,
 				502A582B1CB82999009D8931 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
