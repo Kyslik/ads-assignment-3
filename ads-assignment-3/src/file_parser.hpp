@@ -1,13 +1,13 @@
 //
-//  FileParser.hpp
+//  file_parser.hpp
 //  ads-assignment-3
 //
 //  Created by Martin Kiesel on 09/04/16.
 //  Copyright © 2016 Martin Kiesel. All rights reserved.
 //
 
-#ifndef FileParser_hpp
-#define FileParser_hpp
+#ifndef file_parser_hpp
+#define file_parser_hpp
 
 #include <iostream>
 #include <map>
@@ -26,6 +26,9 @@ namespace ads_2
             type::Data data_;
 
             void parse();
+
+            FileParser& operator=(const FileParser&);
+            //FileParser(const FileParser&);
         public:
             FileParser() : length_(1000), filename_("dictionary-min.txt")
             {
@@ -41,10 +44,9 @@ namespace ads_2
             inline bool isValid() const {return is_valid_;}
             inline type::uintf getLength() const {return length_;}
             inline type::Data  getData() const {return data_;}
-
         };
 
     }
 }
 
-#endif /* FileParser_hpp */
+#endif /* file_parser_hpp */

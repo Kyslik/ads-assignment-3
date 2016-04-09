@@ -1,12 +1,12 @@
 //
-//  FileParser.cpp
+//  file_parser.cpp
 //  ads-assignment-3
 //
 //  Created by Martin Kiesel on 09/04/16.
 //  Copyright © 2016 Martin Kiesel. All rights reserved.
 //
 
-#include "FileParser.hpp"
+#include "file_parser.hpp"
 
 #include <fstream>
 
@@ -25,7 +25,6 @@ namespace ads_2
 
             while (file >> probability >> word && data_.size() != length_)
                 data_[word] = probability;
-            
             is_valid_ = true;
         }
     }
