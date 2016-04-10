@@ -17,6 +17,12 @@ namespace ads_2
         {
             std::string key = "";
             Node *left, *right;
+
+            inline ~Node()
+            {
+                delete left;
+                delete right;
+            }
         };
     }
 }

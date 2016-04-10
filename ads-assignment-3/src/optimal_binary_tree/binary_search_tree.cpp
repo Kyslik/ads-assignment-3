@@ -56,7 +56,7 @@ namespace ads_2
 
         Node *BinarySearchTree::construct(const uintf i,
                                           const uintf j,
-                                          const type::Pairs &pairs)
+                                          const Pairs &pairs)
         {
             Node *node;
             if (i == j) return nullptr;

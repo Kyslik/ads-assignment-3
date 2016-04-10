@@ -29,7 +29,6 @@ namespace ads_2
             Node *construct(const type::uintf i,
                             const type::uintf j,
                             const type::Pairs &pairs);
-            void postorder(Node* p, int indent = 0);
             void calculateOptimal(const type::Pairs &pairs);
 
             BinarySearchTree& operator=(const BinarySearchTree&);
@@ -45,6 +44,7 @@ namespace ads_2
             void compute();
             inline type::uintf getNodeCount() const {return node_count_;}
             bool search(const std::string &search_term);
+            ~BinarySearchTree() {delete root_;};
         };
     }
 }
