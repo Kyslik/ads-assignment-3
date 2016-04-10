@@ -12,12 +12,15 @@
 //#include "src/file_parser.hpp"
 #include "src/optimal_binary_tree/binary_search_tree.hpp"
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[])
+{
     using namespace ads_2;
     using parser::FileParser;
     using binary_tree::BinarySearchTree;
 
     FileParser parser("dictionary-min.txt", 1000);
+    if (!parser.isValid()) return 1;
+
     BinarySearchTree bst(&parser);
     size_t start = time(NULL);
     bst.compute();

@@ -12,26 +12,34 @@ namespace ads_2
 {
     namespace binary_tree
     {
+        using type::uintf;
+        using type::Pairs;
+
         void BinarySearchTree::compute()
         {
-            type::Pairs pairs(matrix_size_ + 1);
-            {
-                type::uintf i = 1;
-                for (const auto &pair : parser_->getData())
-                {
-                    pairs[i] = pair;
-                    i++;
-                }
-            }
-
+            const Pairs pairs = constructPairs();
             calculateOptimal(pairs);
             root_ = construct(0, matrix_size_, pairs);
+        }
+
+        const Pairs BinarySearchTree::constructPairs()
+        {
+            Pairs pairs(matrix_size_ + 1);
+            uintf i = 1;
+
+            for (const auto &pair : parser_->getData())
+            {
+                pairs[i] = pair;
+                i++;
+            }
+            return pairs;
         }
 
         bool BinarySearchTree::search(const std::string &search_term)
         {
             Node *it;
             it = root_;
+
             while (true)
                 if (it == nullptr)
                     return false;
@@ -46,8 +54,8 @@ namespace ads_2
                     it = it->right;
         }
 
-        Node *BinarySearchTree::construct(const type::uintf i,
-                                          const type::uintf j,
+        Node *BinarySearchTree::construct(const uintf i,
+                                          const uintf j,
                                           const type::Pairs &pairs)
         {
             Node *node;
@@ -62,19 +70,19 @@ namespace ads_2
             return node;
         }
 
-        void BinarySearchTree::calculateOptimal(const type::Pairs &pairs)
+        void BinarySearchTree::calculateOptimal(const Pairs &pairs)
         {
-            using type::uintf;
-            type::Matrix costs(matrix_size_ + 1,
-                               type::Dimension(matrix_size_ + 1 , 0));
-            type::Matrix weights(matrix_size_ + 1,
-                                 type::Dimension(matrix_size_ + 1, 0));
+            using type::Matrix;
+            using type::Dimension;
+
+            Matrix costs(matrix_size_ + 1,
+                               Dimension(matrix_size_ + 1 , 0));
+            Matrix weights(matrix_size_ + 1,
+                                 Dimension(matrix_size_ + 1, 0));
 
             for(uintf i = 0; i <= matrix_size_; i++)
-            {
                 for(uintf j = i + 1; j <= matrix_size_; j++)
                     weights[i][j] = weights[i][j - 1] + pairs[j].second;
-            }
 
             for(uintf i = 0; i < matrix_size_; i++)
             {
@@ -94,11 +102,9 @@ namespace ads_2
                     for(uintf k = m + 1; k <= roots_[i+1][j]; k++)
                     {
                         uintf x = costs[i][k-1] + costs[k][j];
-                        if(x < min)
-                        {
-                            m = k;
-                            min = x;
-                        }
+                        if(x >= min) continue;
+                        m = k;
+                        min = x;
                     }
 
                     costs[i][j] = weights[i][j] + min;

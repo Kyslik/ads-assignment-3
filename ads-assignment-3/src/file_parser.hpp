@@ -28,7 +28,7 @@ namespace ads_2
             void parse();
 
             FileParser& operator=(const FileParser&);
-            //FileParser(const FileParser&);
+            FileParser(const FileParser&);
         public:
             FileParser() : length_(1000), filename_("dictionary-min.txt")
             {

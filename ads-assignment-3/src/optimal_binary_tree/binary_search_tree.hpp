@@ -19,15 +19,21 @@ namespace ads_2
         class BinarySearchTree
         {
             parser::FileParser *parser_;
+            Node *root_;
+
             const type::uintf matrix_size_;
             type::Matrix roots_;
             type::uintf node_count_ = 0;
-            Node *root_;
+
+            const type::Pairs constructPairs();
             Node *construct(const type::uintf i,
                             const type::uintf j,
                             const type::Pairs &pairs);
             void postorder(Node* p, int indent = 0);
             void calculateOptimal(const type::Pairs &pairs);
+
+            BinarySearchTree& operator=(const BinarySearchTree&);
+            BinarySearchTree(const BinarySearchTree&);
 
         public:
             BinarySearchTree(parser::FileParser *parser) :
