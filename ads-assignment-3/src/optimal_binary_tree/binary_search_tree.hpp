@@ -26,10 +26,14 @@ namespace ads_2
             type::uintf node_count_ = 0;
 
             const type::Pairs constructPairs();
+            const type::Dimension constructImprobabilities();
+
             Node *construct(const type::uintf i,
                             const type::uintf j,
                             const type::Pairs &pairs);
-            void calculateOptimal(const type::Pairs &pairs);
+            
+            void calculateOptimal(const type::Pairs &pairs,
+                                  const type::Dimension &improbabilities);
 
             BinarySearchTree& operator=(const BinarySearchTree&);
             BinarySearchTree(const BinarySearchTree&);
@@ -44,6 +48,8 @@ namespace ads_2
             void compute();
             inline type::uintf getNodeCount() const {return node_count_;}
             bool search(const std::string &search_term);
+            type::uintf countNodes() const;
+            
             ~BinarySearchTree() {delete root_;};
         };
     }
