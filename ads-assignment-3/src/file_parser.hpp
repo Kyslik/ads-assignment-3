@@ -42,11 +42,11 @@ namespace ads_2
                 parse(filename);
             };
             
-            inline bool         isValid()       const {return is_valid_;}
-            inline type::uintf  getLength()     const {return length_;}
-            inline type::Data   getData()       const {return data_;}
-            inline type::Data   getSpareData()  const {return spare_data_;}
-            inline void         freeSpareData()       {spare_data_.clear();}
+            inline bool         isValid()            const {return is_valid_;}
+            inline type::uintf getLength()           const {return length_;}
+            inline const type::Data & getData()      const {return data_;}
+            inline const type::Data & getSpareData() const {return spare_data_;}
+            inline void         freeSpareData()            {spare_data_.clear();}
         };
 
     }
