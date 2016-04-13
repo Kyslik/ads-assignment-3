@@ -18,6 +18,7 @@ namespace ads_2
     {
         typedef uint_fast32_t uintf;
         typedef uint_fast16_t uintf16;
+        
         typedef std::map<std::string, const uintf> Data;
         typedef std::pair<std::string, uintf> DataPair;
 

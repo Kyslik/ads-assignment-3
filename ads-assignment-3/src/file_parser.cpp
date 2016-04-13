@@ -14,17 +14,24 @@ namespace ads_2
 {
     namespace parser
     {
-        void FileParser::parse()
+        void FileParser::parse(const std::string &filename)
         {
-            std::ifstream file(filename_);
+            std::ifstream file(filename);
             if (file.fail()) return;
 
-            std::string str;
             std::string word;
             type::uintf probability;
 
-            while (file >> probability >> word && data_.size() != length_)
-                data_[word] = probability;
+            while (data_.size() != length_ && file >> probability >> word)
+                data_.insert(type::DataPair(word, probability));
+
+            while (file >> probability >> word)
+            {
+                if (data_.count(word)) continue;
+                spare_data_.insert(type::DataPair(word, probability));
+            }
+
+            length_ = static_cast<type::uintf>(data_.size());
             is_valid_ = true;
         }
     }

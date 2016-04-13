@@ -20,30 +20,33 @@ namespace ads_2
     {
         class FileParser
         {
-            bool is_valid_ = false;
+            bool        is_valid_ = false;
             type::uintf length_;
-            std::string filename_;
-            type::Data data_;
+            type::Data  data_,
+                        spare_data_;
 
-            void parse();
+            void parse(const std::string &filename);
 
             FileParser& operator=(const FileParser&);
             FileParser(const FileParser&);
+
         public:
-            FileParser() : length_(1000), filename_("dictionary-min.txt")
+            FileParser(const std::string &filename = "dictionary-min.txt") :
+                                                            length_(1000)
             {
-                parse();
+                parse(filename);
             };
-            FileParser(const std::string &name,
-                       const type::uintf &lines) :
-                                                length_(lines),
-                                                filename_(name)
+            FileParser(const std::string &filename,
+                       const type::uintf &lines) : length_(lines)
             {
-                parse();
+                parse(filename);
             };
-            inline bool isValid() const {return is_valid_;}
-            inline type::uintf getLength() const {return length_;}
-            inline type::Data  getData() const {return data_;}
+            
+            inline bool         isValid()       const {return is_valid_;}
+            inline type::uintf  getLength()     const {return length_;}
+            inline type::Data   getData()       const {return data_;}
+            inline type::Data   getSpareData()  const {return spare_data_;}
+            inline void         freeSpareData()       {spare_data_.clear();}
         };
 
     }
