@@ -27,7 +27,7 @@ namespace ads_2
             return *(const uintf16*)p;
         }
 
-        uintf hash(const std::string &str)
+        uintf generateHash(const std::string &str)
         {
             uintf hash = 0, len = static_cast<uintf>(str.length()), tmp;
             int rem;
