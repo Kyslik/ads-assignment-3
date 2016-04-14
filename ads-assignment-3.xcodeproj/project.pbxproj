@@ -10,6 +10,9 @@
 		502A587F1CB82DB2009D8931 /* dictionary-min.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A587D1CB82DAA009D8931 /* dictionary-min.txt */; };
 		502A58881CB9231E009D8931 /* file_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502A58861CB9231E009D8931 /* file_parser.cpp */; };
 		502A588B1CB93382009D8931 /* dictionary-small.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A588A1CB93366009D8931 /* dictionary-small.txt */; };
+		504995E21CC02DE700BF54C9 /* hash_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 504995E01CC02DE700BF54C9 /* hash_table.cpp */; };
+		504995E51CC04E6800BF54C9 /* sample100000.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 504995E31CC04E5A00BF54C9 /* sample100000.txt */; };
+		504995E61CC04E6800BF54C9 /* sample10000.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 504995E41CC04E5A00BF54C9 /* sample10000.txt */; };
 		50E72B201CB9AD92009AD2F3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502A582A1CB82999009D8931 /* main.cpp */; };
 		50E72B221CB9B012009AD2F3 /* dictionary-test.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50E72B211CB9AFE5009AD2F3 /* dictionary-test.txt */; };
 		50E72B251CBAE939009AD2F3 /* dictionary.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A587E1CB82DAA009D8931 /* dictionary.txt */; };
@@ -24,6 +27,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				504995E51CC04E6800BF54C9 /* sample100000.txt in CopyFiles */,
+				504995E61CC04E6800BF54C9 /* sample10000.txt in CopyFiles */,
 				50E72B281CBD970F009AD2F3 /* no-dupe-dictionary.txt in CopyFiles */,
 				50E72B251CBAE939009AD2F3 /* dictionary.txt in CopyFiles */,
 				50E72B221CB9B012009AD2F3 /* dictionary-test.txt in CopyFiles */,
@@ -48,6 +53,10 @@
 		502A588F1CB93CC6009D8931 /* node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
 		502A58901CB95D52009D8931 /* main2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main2.cpp; sourceTree = "<group>"; };
 		502A58931CB96582009D8931 /* matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = matrix.hpp; sourceTree = "<group>"; };
+		504995E01CC02DE700BF54C9 /* hash_table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hash_table.cpp; sourceTree = "<group>"; };
+		504995E11CC02DE700BF54C9 /* hash_table.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hash_table.hpp; sourceTree = "<group>"; };
+		504995E31CC04E5A00BF54C9 /* sample100000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample100000.txt; sourceTree = "<group>"; };
+		504995E41CC04E5A00BF54C9 /* sample10000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample10000.txt; sourceTree = "<group>"; };
 		50E72B211CB9AFE5009AD2F3 /* dictionary-test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-test.txt"; sourceTree = "<group>"; };
 		50E72B231CBAE0AF009AD2F3 /* hash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hash.cpp; sourceTree = "<group>"; };
 		50E72B271CBD96D4009AD2F3 /* no-dupe-dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "no-dupe-dictionary.txt"; sourceTree = "<group>"; };
@@ -94,6 +103,8 @@
 		502A587C1CB82DAA009D8931 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				504995E31CC04E5A00BF54C9 /* sample100000.txt */,
+				504995E41CC04E5A00BF54C9 /* sample10000.txt */,
 				50E72B271CBD96D4009AD2F3 /* no-dupe-dictionary.txt */,
 				502A588A1CB93366009D8931 /* dictionary-small.txt */,
 				502A587D1CB82DAA009D8931 /* dictionary-min.txt */,
@@ -121,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				50E72B231CBAE0AF009AD2F3 /* hash.cpp */,
+				504995E01CC02DE700BF54C9 /* hash_table.cpp */,
+				504995E11CC02DE700BF54C9 /* hash_table.hpp */,
 			);
 			path = hash_table;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E72B261CBD7AE0009AD2F3 /* binary_search_tree.cpp in Sources */,
+				504995E21CC02DE700BF54C9 /* hash_table.cpp in Sources */,
 				50E72B201CB9AD92009AD2F3 /* main.cpp in Sources */,
 				502A58881CB9231E009D8931 /* file_parser.cpp in Sources */,
 			);
