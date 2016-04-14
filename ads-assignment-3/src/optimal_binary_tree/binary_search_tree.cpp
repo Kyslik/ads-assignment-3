@@ -67,17 +67,31 @@ namespace ads_2
             {
                 uintf i = 1;
                 auto previous_it = parser_->getData().begin();
+                auto previous_spare = parser_->getSpareData().begin();
+
                 for (auto it = std::next(previous_it);
                      it != parser_->getData().end();
                      it++)
                 {
-                    for (const auto &spare : parser_->getSpareData())
+//                    for (const auto &spare : parser_->getSpareData())
+//                    {
+//                        if (previous_it->first > spare.first) continue;
+//                        if (previous_it->first < spare.first && spare.first < it->first)
+//                            improbabilities[i] += spare.second;
+//                        if (spare.first > it->first) break;
+//                    }
+
+                    for (auto it_s = previous_spare;
+                         it_s != parser_->getSpareData().end();
+                         it_s++)
                     {
-                        if (previous_it->first > spare.first) continue;
-                        if (previous_it->first < spare.first && spare.first < it->first)
-                            improbabilities[i] += spare.second;
-                        if (spare.first > it->first) break;
+                        if (previous_it->first < it_s->first && it_s->first < it->first) {
+                            improbabilities[i] += it_s->second;
+                            previous_spare = it_s;
+                        }
+                        if (it_s->first > it->first) break;
                     }
+
                     i++;
                     previous_it = it;
                 }
