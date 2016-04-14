@@ -20,6 +20,15 @@ namespace ads_2
             if (file.fail()) return;
 
             std::string word;
+
+            if(is_sample_)
+            {
+                while (file >> word)
+                    sample_data_.push_back(word);
+                is_valid_ = true;
+                return;
+            }
+
             type::uintf probability;
 
             while (data_.size() != length_ && file >> probability >> word)
