@@ -11,6 +11,8 @@
 
 #include <map>
 #include <vector>
+#include <list>
+#include <string>
 
 namespace ads_2
 {
@@ -22,10 +24,15 @@ namespace ads_2
         typedef std::map<std::string, const uintf> Data;
 
         typedef std::pair<std::string, uintf> DataPair;
-
         typedef std::vector<DataPair> Pairs;
+
         typedef std::vector<uintf> Dimension;
         typedef std::vector<Dimension> Matrix;
+
+        typedef std::list<std::string> KegList;
+        typedef std::vector<KegList *> KegDimension;
+
+        typedef std::vector<const std::string> SampleData;
     }
 }
 
