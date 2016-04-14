@@ -29,13 +29,10 @@ namespace ads_2
         const Pairs BinarySearchTree::constructPairs()
         {
             Pairs pairs(matrix_size_ + 1);
-
             uintf i = 1;
+
             for (const auto &pair : parser_->getData())
-            {
-                pairs[i] = pair;
-                i++;
-            }
+                pairs[i++] = pair;
 
             return pairs;
         }
@@ -65,31 +62,28 @@ namespace ads_2
             }
 
             {
+                using std::next;
+
                 uintf i = 1;
                 auto previous_it = parser_->getData().begin();
                 auto previous_spare = parser_->getSpareData().begin();
 
-                for (auto it = std::next(previous_it);
+                for (auto it = next(previous_it);
                      it != parser_->getData().end();
                      it++)
                 {
-//                    for (const auto &spare : parser_->getSpareData())
-//                    {
-//                        if (previous_it->first > spare.first) continue;
-//                        if (previous_it->first < spare.first && spare.first < it->first)
-//                            improbabilities[i] += spare.second;
-//                        if (spare.first > it->first) break;
-//                    }
-
                     for (auto it_s = previous_spare;
                          it_s != parser_->getSpareData().end();
                          it_s++)
                     {
-                        if (previous_it->first < it_s->first && it_s->first < it->first) {
+                        if (previous_it->first < it_s->first &&
+                            it_s->first < it->first)
+                        {
                             improbabilities[i] += it_s->second;
                             previous_spare = it_s;
                         }
-                        if (it_s->first > it->first) break;
+
+                        if (it_s->first >= it->first) break;
                     }
 
                     i++;
@@ -103,8 +97,10 @@ namespace ads_2
         uintf BinarySearchTree::countNodes() const
         {
             if (root_ == nullptr) return 0;
+
             std::queue<Node*> q;
             type::uintf count = 1;
+
             q.push(root_);
 
             while (!q.empty())
@@ -132,6 +128,7 @@ namespace ads_2
             node->key = pairs[roots_[i][j]].first;
             node->left = construct(i, roots_[i][j] - 1, pairs);
             node->right = construct(roots_[i][j], j, pairs);
+
             node_count_++;
 
             return node;
@@ -168,19 +165,19 @@ namespace ads_2
                 for(uintf i = 0; i <= matrix_size_ - l; i++)
                 {
                     uintf j = i + l;
-                    uintf m = roots_[i][j-1];
-                    uintf min = costs[i][m-1] + costs[m][j];
+                    uintf root = roots_[i][j-1];
+                    uintf min = costs[i][root-1] + costs[root][j];
 
-                    for(uintf k = m + 1; k <= roots_[i+1][j]; k++)
+                    for(uintf k = root + 1; k <= roots_[i+1][j]; k++)
                     {
                         uintf x = costs[i][k-1] + costs[k][j];
                         if(x >= min) continue;
-                        m = k;
+                        root = k;
                         min = x;
                     }
 
                     costs[i][j] = weights[i][j] + min;
-                    roots_[i][j] = m;
+                    roots_[i][j] = root;
                 }
             }
         }
