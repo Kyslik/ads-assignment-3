@@ -29,8 +29,8 @@ namespace ads_2
         const Pairs BinarySearchTree::constructPairs()
         {
             Pairs pairs(matrix_size_ + 1);
-            uintf i = 1;
 
+            uintf i = 1;
             for (const auto &pair : parser_->getData())
                 pairs[i++] = pair;
 

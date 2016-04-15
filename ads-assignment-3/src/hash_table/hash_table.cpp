@@ -32,11 +32,11 @@ namespace ads_2
                 case 1:
                     return table_[hash]->front() == key;
                 case 2:
-                    return (table_[hash]->front() == key || table_[hash]->back() == key);
+                    return (table_[hash]->front() == key
+                            || table_[hash]->back() == key);
                 default:
                     auto end_it = table_[hash]->end();
                     return std::find(table_[hash]->begin(), end_it, key) != end_it;
-                    break;
             }
         }
 
@@ -54,9 +54,8 @@ namespace ads_2
             for (const auto &list : table_)
             {
                 for (const auto &item : *list)
-                {
                     std::cout << item << "\t";
-                }
+                
                 std::cout << std::endl;
             }
         }
