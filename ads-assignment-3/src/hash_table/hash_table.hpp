@@ -37,6 +37,8 @@ namespace ads_2
 
                 for (const auto &item : parser_->getData())
                     insert(item.first);
+                
+                sortLists();
             }
 
             void sortLists();
