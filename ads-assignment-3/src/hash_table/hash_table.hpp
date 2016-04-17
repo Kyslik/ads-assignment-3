@@ -42,7 +42,6 @@ namespace ads_2
             }
 
             void sortLists();
-            void printLists();
             bool search(const std::string &key) const;
 
             ~HashTable()

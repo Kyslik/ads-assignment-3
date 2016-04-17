@@ -10,8 +10,8 @@
 #define ads_2_typedefs_h
 
 #include <map>
-#include <vector>
 #include <list>
+#include <vector>
 #include <string>
 
 namespace ads_2

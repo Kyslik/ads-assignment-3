@@ -48,16 +48,5 @@ namespace ads_2
                 list->sort();
             }
         }
-
-        void HashTable::printLists()
-        {
-            for (const auto &list : table_)
-            {
-                for (const auto &item : *list)
-                    std::cout << item << "\t";
-                
-                std::cout << std::endl;
-            }
-        }
     }
 }
