@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		502A587F1CB82DB2009D8931 /* dictionary-min.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A587D1CB82DAA009D8931 /* dictionary-min.txt */; };
-		502A588B1CB93382009D8931 /* dictionary-small.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A588A1CB93366009D8931 /* dictionary-small.txt */; };
 		502E568C1CC15A8900FB37C7 /* trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502E568A1CC15A8900FB37C7 /* trie.cpp */; };
 		502E569C1CC4226400FB37C7 /* sample_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502E569A1CC4226400FB37C7 /* sample_loader.cpp */; };
 		502E569F1CC424FD00FB37C7 /* dictionary_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502E569D1CC424FD00FB37C7 /* dictionary_loader.cpp */; };
@@ -19,7 +17,6 @@
 		50E72B221CB9B012009AD2F3 /* dictionary-test.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50E72B211CB9AFE5009AD2F3 /* dictionary-test.txt */; };
 		50E72B251CBAE939009AD2F3 /* dictionary.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A587E1CB82DAA009D8931 /* dictionary.txt */; };
 		50E72B261CBD7AE0009AD2F3 /* binary_search_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502A588C1CB93CA9009D8931 /* binary_search_tree.cpp */; };
-		50E72B281CBD970F009AD2F3 /* no-dupe-dictionary.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50E72B271CBD96D4009AD2F3 /* no-dupe-dictionary.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,11 +28,8 @@
 			files = (
 				504995E51CC04E6800BF54C9 /* sample100000.txt in CopyFiles */,
 				504995E61CC04E6800BF54C9 /* sample10000.txt in CopyFiles */,
-				50E72B281CBD970F009AD2F3 /* no-dupe-dictionary.txt in CopyFiles */,
 				50E72B251CBAE939009AD2F3 /* dictionary.txt in CopyFiles */,
 				50E72B221CB9B012009AD2F3 /* dictionary-test.txt in CopyFiles */,
-				502A588B1CB93382009D8931 /* dictionary-small.txt in CopyFiles */,
-				502A587F1CB82DB2009D8931 /* dictionary-min.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,10 +38,8 @@
 /* Begin PBXFileReference section */
 		502A58271CB82999009D8931 /* ads-assignment-3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ads-assignment-3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		502A582A1CB82999009D8931 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		502A587D1CB82DAA009D8931 /* dictionary-min.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-min.txt"; sourceTree = "<group>"; };
 		502A587E1CB82DAA009D8931 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 		502A58891CB92DBF009D8931 /* ads_2_typedefs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ads_2_typedefs.hpp; sourceTree = "<group>"; };
-		502A588A1CB93366009D8931 /* dictionary-small.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-small.txt"; sourceTree = "<group>"; };
 		502A588C1CB93CA9009D8931 /* binary_search_tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = binary_search_tree.cpp; sourceTree = "<group>"; };
 		502A588D1CB93CA9009D8931 /* binary_search_tree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = binary_search_tree.hpp; sourceTree = "<group>"; };
 		502A588F1CB93CC6009D8931 /* node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
@@ -64,7 +56,6 @@
 		504995E41CC04E5A00BF54C9 /* sample10000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample10000.txt; sourceTree = "<group>"; };
 		50E72B211CB9AFE5009AD2F3 /* dictionary-test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dictionary-test.txt"; sourceTree = "<group>"; };
 		50E72B231CBAE0AF009AD2F3 /* hash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hash.cpp; sourceTree = "<group>"; };
-		50E72B271CBD96D4009AD2F3 /* no-dupe-dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "no-dupe-dictionary.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +100,6 @@
 			children = (
 				504995E31CC04E5A00BF54C9 /* sample100000.txt */,
 				504995E41CC04E5A00BF54C9 /* sample10000.txt */,
-				50E72B271CBD96D4009AD2F3 /* no-dupe-dictionary.txt */,
-				502A588A1CB93366009D8931 /* dictionary-small.txt */,
-				502A587D1CB82DAA009D8931 /* dictionary-min.txt */,
 				502A587E1CB82DAA009D8931 /* dictionary.txt */,
 				50E72B211CB9AFE5009AD2F3 /* dictionary-test.txt */,
 			);
