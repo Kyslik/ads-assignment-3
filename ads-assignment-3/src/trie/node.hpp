@@ -9,8 +9,8 @@
 #ifndef node_hpp
 #define node_hpp
 
-#include <string>
 #include <map>
+#include <string>
 
 namespace ads_2
 {
