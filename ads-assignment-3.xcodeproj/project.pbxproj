@@ -10,7 +10,8 @@
 		502A587F1CB82DB2009D8931 /* dictionary-min.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A587D1CB82DAA009D8931 /* dictionary-min.txt */; };
 		502A588B1CB93382009D8931 /* dictionary-small.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 502A588A1CB93366009D8931 /* dictionary-small.txt */; };
 		502E568C1CC15A8900FB37C7 /* trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502E568A1CC15A8900FB37C7 /* trie.cpp */; };
-		502E568F1CC41CED00FB37C7 /* file_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502E568E1CC41CED00FB37C7 /* file_parser.cpp */; };
+		502E569C1CC4226400FB37C7 /* sample_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502E569A1CC4226400FB37C7 /* sample_loader.cpp */; };
+		502E569F1CC424FD00FB37C7 /* dictionary_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502E569D1CC424FD00FB37C7 /* dictionary_loader.cpp */; };
 		504995E21CC02DE700BF54C9 /* hash_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 504995E01CC02DE700BF54C9 /* hash_table.cpp */; };
 		504995E51CC04E6800BF54C9 /* sample100000.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 504995E31CC04E5A00BF54C9 /* sample100000.txt */; };
 		504995E61CC04E6800BF54C9 /* sample10000.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 504995E41CC04E5A00BF54C9 /* sample10000.txt */; };
@@ -54,8 +55,10 @@
 		502E56881CC153EE00FB37C7 /* node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
 		502E568A1CC15A8900FB37C7 /* trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = trie.cpp; sourceTree = "<group>"; };
 		502E568B1CC15A8900FB37C7 /* trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = trie.hpp; sourceTree = "<group>"; };
-		502E568D1CC41CED00FB37C7 /* file_parser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = file_parser.hpp; path = file_handler/file_parser.hpp; sourceTree = "<group>"; };
-		502E568E1CC41CED00FB37C7 /* file_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file_parser.cpp; path = file_handler/file_parser.cpp; sourceTree = "<group>"; };
+		502E569A1CC4226400FB37C7 /* sample_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sample_loader.cpp; path = file_handler/sample_loader/sample_loader.cpp; sourceTree = "<group>"; };
+		502E569B1CC4226400FB37C7 /* sample_loader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = sample_loader.hpp; path = file_handler/sample_loader/sample_loader.hpp; sourceTree = "<group>"; };
+		502E569D1CC424FD00FB37C7 /* dictionary_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dictionary_loader.cpp; path = file_handler/dictionary_loader/dictionary_loader.cpp; sourceTree = "<group>"; };
+		502E569E1CC424FD00FB37C7 /* dictionary_loader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = dictionary_loader.hpp; path = file_handler/dictionary_loader/dictionary_loader.hpp; sourceTree = "<group>"; };
 		504995E01CC02DE700BF54C9 /* hash_table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hash_table.cpp; sourceTree = "<group>"; };
 		504995E11CC02DE700BF54C9 /* hash_table.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hash_table.hpp; sourceTree = "<group>"; };
 		504995E31CC04E5A00BF54C9 /* sample100000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample100000.txt; sourceTree = "<group>"; };
@@ -162,8 +165,10 @@
 		502E56901CC41CF600FB37C7 /* file_handler */ = {
 			isa = PBXGroup;
 			children = (
-				502E568D1CC41CED00FB37C7 /* file_parser.hpp */,
-				502E568E1CC41CED00FB37C7 /* file_parser.cpp */,
+				502E569A1CC4226400FB37C7 /* sample_loader.cpp */,
+				502E569B1CC4226400FB37C7 /* sample_loader.hpp */,
+				502E569D1CC424FD00FB37C7 /* dictionary_loader.cpp */,
+				502E569E1CC424FD00FB37C7 /* dictionary_loader.hpp */,
 			);
 			name = file_handler;
 			sourceTree = "<group>";
@@ -224,11 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502E569C1CC4226400FB37C7 /* sample_loader.cpp in Sources */,
 				50E72B261CBD7AE0009AD2F3 /* binary_search_tree.cpp in Sources */,
 				504995E21CC02DE700BF54C9 /* hash_table.cpp in Sources */,
 				50E72B201CB9AD92009AD2F3 /* main.cpp in Sources */,
+				502E569F1CC424FD00FB37C7 /* dictionary_loader.cpp in Sources */,
 				502E568C1CC15A8900FB37C7 /* trie.cpp in Sources */,
-				502E568F1CC41CED00FB37C7 /* file_parser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
