@@ -51,7 +51,6 @@
 		502A588C1CB93CA9009D8931 /* binary_search_tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = binary_search_tree.cpp; sourceTree = "<group>"; };
 		502A588D1CB93CA9009D8931 /* binary_search_tree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = binary_search_tree.hpp; sourceTree = "<group>"; };
 		502A588F1CB93CC6009D8931 /* node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
-		502A58931CB96582009D8931 /* matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = matrix.hpp; sourceTree = "<group>"; };
 		502E56881CC153EE00FB37C7 /* node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
 		502E568A1CC15A8900FB37C7 /* trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = trie.cpp; sourceTree = "<group>"; };
 		502E568B1CC15A8900FB37C7 /* trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = trie.hpp; sourceTree = "<group>"; };
@@ -127,7 +126,6 @@
 				502A58841CB830F9009D8931 /* optimal_binary_tree */,
 				502A58851CB830F9009D8931 /* trie */,
 				502A58891CB92DBF009D8931 /* ads_2_typedefs.hpp */,
-				502A58931CB96582009D8931 /* matrix.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";

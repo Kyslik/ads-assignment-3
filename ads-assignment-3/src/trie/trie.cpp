@@ -41,10 +41,10 @@ namespace ads_2
                     if (pos == 0) continue;
 
                     std::string pre_word = word.substr(0, pos);
-                    std::string pre_sub_word = word.substr(pos);
+                    std::string sub_word = word.substr(pos);
                     std::string sub_kid = kid.first.substr(pos);
 
-                    insert(node.childrens[pre_word], pre_sub_word);
+                    insert(node.childrens[pre_word], sub_word);
                     node.childrens[pre_word].childrens[sub_kid] = Node(kid.second.is_word, node.childrens[kid.first].childrens);
                     node.childrens[pre_word].is_word = false;
                     node.childrens.erase(kid.first);
@@ -59,14 +59,14 @@ namespace ads_2
                     {
                         std::string sub_word = word.substr(pos);
                         if (pos == kid.first.size())
-                            insert(kid.second, sub_word); //she -> shemale
+                            insert(kid.second, sub_word);
                         else
                         {
                             std::string pre_word = word.substr(0, pos);
-                            std::string pre_sub_word = kid.first.substr(pos);
+                            std::string sub_kid = kid.first.substr(pos);
 
                             insert(node.childrens[pre_word], sub_word);
-                            node.childrens[pre_word].childrens[pre_sub_word] = Node(kid.second.is_word, node.childrens[kid.first].childrens);
+                            node.childrens[pre_word].childrens[sub_kid] = Node(kid.second.is_word, node.childrens[kid.first].childrens);
                             node.childrens[pre_word].is_word = false;
                             node.childrens.erase(kid.first);
                         }
@@ -80,24 +80,23 @@ namespace ads_2
                     type::uintf pos = prefix(word, kid.first);
                     if (pos != 0)
                     {
-                        std::string sub_word = kid.first.substr(pos);
+                        std::string sub_kid = kid.first.substr(pos);
                         if (pos == word.size())
                         {
-                            insert(node.childrens[word], sub_word);
-                            node.childrens[word].childrens[sub_word] = Node(kid.second.is_word, node.childrens[kid.first].childrens);
+                            insert(node.childrens[word], sub_kid);
+                            node.childrens[word].childrens[sub_kid] = Node(kid.second.is_word, node.childrens[kid.first].childrens);
                             node.childrens[word].is_word = false;
                             node.childrens.erase(kid.first);
                         }
                         else
                         {
-                            std::string pre_word = kid.first.substr(0, pos);
-                            std::string pre_sub_word = word.substr(pos);
+                            std::string pre_kid = kid.first.substr(0, pos);
+                            std::string sub_word = word.substr(pos);
 
-                            insert(node.childrens[pre_word], pre_sub_word);
-                            node.childrens[pre_word].childrens[sub_word] = Node(kid.second.is_word, node.childrens[kid.first].childrens);
-                            node.childrens[pre_word].is_word = false;
+                            insert(node.childrens[pre_kid], sub_word);
+                            node.childrens[pre_kid].childrens[sub_kid] = Node(kid.second.is_word, node.childrens[kid.first].childrens);
+                            node.childrens[pre_kid].is_word = false;
                             node.childrens.erase(kid.first);
-
                         }
                         return;
                     }
