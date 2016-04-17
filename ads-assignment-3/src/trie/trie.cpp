@@ -18,6 +18,13 @@ namespace ads_2
                 insert(parent, word.first);
         }
 
+        type::uintf Trie::prefix(const std::string &prefix,
+                                 const std::string &word)
+        {
+            auto res = std::mismatch(prefix.begin(), prefix.end(), word.begin());
+            return static_cast<type::uintf>((res.first - prefix.begin()) % word.length());
+        }
+
         void Trie::insert(Node &node, const std::string &word)
         {
             for (auto &kid : node.childrens)
@@ -32,9 +39,9 @@ namespace ads_2
                 {
                     type::uintf pos = prefix(kid.first, word);
                     if (pos == 0) continue;
-                    //divide he-ll && he-ro
-                    std::string pre_word = word.substr(0, pos); //he
-                    std::string pre_sub_word = word.substr(pos); //ro
+
+                    std::string pre_word = word.substr(0, pos);
+                    std::string pre_sub_word = word.substr(pos);
                     std::string sub_kid = kid.first.substr(pos);
 
                     insert(node.childrens[pre_word], pre_sub_word);
@@ -98,13 +105,6 @@ namespace ads_2
                 }
             }
             node.childrens[word] = Node(true);
-        }
-
-        type::uintf Trie::prefix(const std::string &prefix,
-                                 const std::string &word)
-        {
-            auto res = std::mismatch(prefix.begin(), prefix.end(), word.begin());
-            return static_cast<type::uintf>((res.first - prefix.begin()) % word.length());
         }
 
         bool Trie::search(const Node &node, const std::string &word)
