@@ -15,8 +15,8 @@
 #include "src/hash_table/hash_table.hpp"
 #include "src/trie/trie.hpp"
 
-const std::string DICTIONARY_FILE = "dictionary.txt";
-const std::string SAMPLE_FILE = "sample100000.txt";
+const std::string DICTIONARY_FILE = "./slovnik.txt";
+const std::string SAMPLE_FILE = "./vzorka.txt";
 
 inline void reset(ads_2::type::uintf &i);
 
