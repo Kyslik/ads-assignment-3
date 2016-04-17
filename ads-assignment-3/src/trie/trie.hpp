@@ -9,7 +9,7 @@
 #ifndef trie_hpp
 #define trie_hpp
 
-#include "file_parser.hpp"
+#include "dictionary_loader.hpp"
 #include "node.hpp"
 
 namespace ads_2
@@ -18,7 +18,7 @@ namespace ads_2
     {
         class Trie
         {
-            parser::FileParser *parser_;
+            loader::DictionaryLoader *loader_;
             Node parent;
             void construct();
             void insert(Node &node,
@@ -30,8 +30,12 @@ namespace ads_2
             Trie& operator=(const Trie&);
             Trie(const Trie&);
         public:
-            Trie(parser::FileParser *parser) :
-                                    parser_(parser) { construct(); };
+            Trie(loader::DictionaryLoader *loader) :
+                                    loader_(loader)
+            {
+                construct();
+            };
+            
             inline bool search(const std::string &word)
             {
                 return search(parent, word);

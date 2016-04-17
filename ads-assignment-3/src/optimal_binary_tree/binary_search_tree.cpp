@@ -21,7 +21,7 @@ namespace ads_2
         {
             const Pairs pairs = constructPairs();
             const Dimension improbabilities = constructImprobabilities();
-            parser_->freeSpareData();
+            loader_->freeSpareData();
             calculateOptimal(pairs, improbabilities);
             root_ = construct(0, matrix_size_, pairs);
         }
@@ -31,7 +31,7 @@ namespace ads_2
             Pairs pairs(matrix_size_ + 1);
 
             uintf i = 1;
-            for (const auto &pair : parser_->getData())
+            for (const auto &pair : loader_->getData())
                 pairs[i++] = pair;
 
             return pairs;
@@ -39,23 +39,23 @@ namespace ads_2
 
         const Dimension BinarySearchTree::constructImprobabilities()
         {
-            const uintf length = parser_->getLength();
+            const uintf length = loader_->getLength();
             Dimension improbabilities(length + 1, 0);
 
-            for (const auto &spare : parser_->getSpareData())
+            for (const auto &spare : loader_->getSpareData())
             {
-                if (spare.first < parser_->getData().begin()->first)
+                if (spare.first < loader_->getData().begin()->first)
                     improbabilities[0] += spare.second;
                 else
                     break;
             }
             
-            for(auto it = parser_->getSpareData().rbegin();
-                it != parser_->getSpareData().rend();
+            for(auto it = loader_->getSpareData().rbegin();
+                it != loader_->getSpareData().rend();
                 it++)
             {
 
-                if (it->first > parser_->getData().rbegin()->first)
+                if (it->first > loader_->getData().rbegin()->first)
                     improbabilities[length] += it->second;
                 else
                     break;
@@ -65,15 +65,15 @@ namespace ads_2
                 using std::next;
 
                 uintf i = 1;
-                auto previous_it = parser_->getData().begin();
-                auto previous_spare = parser_->getSpareData().begin();
+                auto previous_it = loader_->getData().begin();
+                auto previous_spare = loader_->getSpareData().begin();
 
                 for (auto it = next(previous_it);
-                     it != parser_->getData().end();
+                     it != loader_->getData().end();
                      it++)
                 {
                     for (auto it_s = previous_spare;
-                         it_s != parser_->getSpareData().end();
+                         it_s != loader_->getSpareData().end();
                          it_s++)
                     {
                         if (previous_it->first < it_s->first &&

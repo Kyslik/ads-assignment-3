@@ -9,7 +9,7 @@
 #ifndef hash_table_hpp
 #define hash_table_hpp
 
-#include "file_parser.hpp"
+#include "dictionary_loader.hpp"
 
 namespace ads_2
 {
@@ -17,7 +17,7 @@ namespace ads_2
     {
         class HashTable
         {
-            parser::FileParser *parser_;
+            loader::DictionaryLoader *loader_;
             type::KegDimension table_;
             const type::uintf table_size_;
             
@@ -26,16 +26,16 @@ namespace ads_2
             HashTable& operator=(const HashTable&);
             HashTable(const HashTable&);
         public:
-            HashTable(parser::FileParser *parser) :
-                parser_(parser),
-                table_size_(parser_->getLength())
+            HashTable(loader::DictionaryLoader *loader) :
+                loader_(loader),
+                table_size_(loader_->getLength())
             {
                 table_.resize(table_size_);
 
                 for (auto &item : table_)
                     item = new type::KegList();
 
-                for (const auto &item : parser_->getData())
+                for (const auto &item : loader_->getData())
                     insert(item.first);
                 
                 sortLists();

@@ -14,7 +14,7 @@ namespace ads_2
     {
         void Trie::construct()
         {
-            for(const auto &word : parser_->getData())
+            for(const auto &word : loader_->getData())
                 insert(parent, word.first);
         }
 

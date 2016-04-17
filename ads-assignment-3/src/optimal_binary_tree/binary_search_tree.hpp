@@ -9,7 +9,7 @@
 #ifndef binary_search_tree_hpp
 #define binary_search_tree_hpp
 
-#include "file_parser.hpp"
+#include "dictionary_loader.hpp"
 #include "node.hpp"
 
 namespace ads_2
@@ -18,7 +18,7 @@ namespace ads_2
     {
         class BinarySearchTree
         {
-            parser::FileParser *parser_;
+            loader::DictionaryLoader *loader_;
             Node *root_;
 
             const type::uintf matrix_size_;
@@ -39,18 +39,19 @@ namespace ads_2
             BinarySearchTree(const BinarySearchTree&);
 
         public:
-            BinarySearchTree(parser::FileParser *parser) :
-                    parser_(parser),
-                    matrix_size_(parser_->getLength()),
+            BinarySearchTree(loader::DictionaryLoader *loader) :
+                    loader_(loader),
+                    matrix_size_(loader_->getLength()),
                     roots_(matrix_size_ + 1,
                            type::Dimension(matrix_size_ + 1, 0))
             {};
+
             void compute();
-            inline type::uintf getNodeCount() const {return node_count_;}
+            inline type::uintf getNodeCount() const { return node_count_; }
             bool search(const std::string &search_term);
             type::uintf countNodes() const;
             
-            ~BinarySearchTree() {delete root_;};
+            ~BinarySearchTree() { delete root_; }
         };
     }
 }
